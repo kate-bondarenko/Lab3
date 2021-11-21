@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа №3</title>
+<style>
+    img {
+        width: 500px;
+        height: 300px;
+    }
+
+    input {
+        position: relative;
+        top: 300px;
+        left: 700px;
+        width: 100px;
+        height: 50px;
+
+    }
+
+</style>
+
+<script>
+
+var b = 0;
+    function ChangeParam()
+    {
+        var elems = document.getElementsByTagName('img');
+        if (b == 0) 
+        {
+            for(var i = 0; i < elems.length; i++) 
+            {
+             elems[i].style.width = '250px';
+             elems[i].style.height ='150px';
+                
+            }
+            b = 1;
+        }
+        else
+        {
+            for(var i = 0; i < elems.length; i++) 
+            {
+                elems[i].style.width = '500px';
+                elems[i].style.height ='300px';
+                
+            }
+            b = 0;
+        }
+        
+      
+    }
+    
+   function UpButton()
+    {
+        const index = ["1","2","3","4","5"];    
+        var randomElement = Math.floor(Math.random() * index.length);
+        if (randomElement == 0)
+        {
+            randomElement = 1;
+        }
+        var image1 = document.getElementById('image'+randomElement);
+        
+        if (randomElement == 1)
+        {
+            var temp = 5;
+        }
+        else
+        {
+            var temp = randomElement - 1;
+        }
+        var image2 = document.getElementById('image'+temp);
+        var rel = image1.src;
+        image1.src = image2.src;
+        image2.src = rel;
+           
+    } 
+      
+    function DownButton()
+    {
+        const index = ["1","2","3","4","5"];    
+        var randomElement = Math.floor(Math.random() * index.length);
+        if (randomElement == 0)
+        {
+            randomElement = 1;
+        }
+        var image1 = document.getElementById('image'+randomElement);
+        if (randomElement == 5)
+        {
+            var temp = 1;
+        }
+        else
+        {
+            var temp = randomElement + 1;
+        }
+        var image2 = document.getElementById('image'+temp);
+        var rel = image1.src;
+        image1.src = image2.src;
+        image2.src = rel;
+           
+    }   
+        
+</script>
+        
+</head>
+<body>
+        <input type="button" name="Up" value="Up" onclick="return UpButton()">
+       <input type="button" name="Down" value="Down" onclick="return DownButton()">
+       <input type="button" name="ChangeParam" value="Change Parameters" onclick="return ChangeParam()">
+       <p> <img id="image1" src="E:\Универ\3 курс\5 семестр\Итех\ЛБ\ЛБ3\картинки\image1.jpg" 
+        alt="MyImage1"></p>
+       <p> <img id="image2" src="E:\Универ\3 курс\5 семестр\Итех\ЛБ\ЛБ3\картинки\image2.jpg" 
+       alt="MyImage2" ></p>
+       <p> <img id="image3" src="E:\Универ\3 курс\5 семестр\Итех\ЛБ\ЛБ3\картинки\image3.jpg" 
+        alt="MyImage3" ></p>
+       <p> <img id="image4" src="E:\Универ\3 курс\5 семестр\Итех\ЛБ\ЛБ3\картинки\image4.jpg" 
+        alt="MyImage4" ></p>
+       <p> <img id="image5" src="E:\Универ\3 курс\5 семестр\Итех\ЛБ\ЛБ3\картинки\image5.jpg" 
+        alt="MyImage5" ></p>
+        
+     
+</body>
+</html>
